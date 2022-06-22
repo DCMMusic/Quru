@@ -17,9 +17,9 @@ tracemalloc.start()
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
-    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən Aze彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /azee yazın.\n🖥️ Qurulum Haqda İzah Üçün /qurulum.yazın.\nℹ️ Heroku Apikey Üçün /apikey yazın.</b>"
+    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən Aze彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /azee yazın.\n🖥️ Qurulum Haqda İzah Üçün /azee.yazın.\nℹ️ Heroku Apikey Üçün /apikey yazın.</b>"
     await Bot.send_video(id, video, text)
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/KarabakhTeamm")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/Thagiyevvvv")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
 @bot.on_message(filters.command('apikey') & filters.private)
@@ -29,7 +29,7 @@ async def apikey(Bot, message: Message):
     text = f"<b>Salam 👋 {message.from_user.first_name}\n✅ Heroku [ApiKey]'i şəkildə göstərilmiş qaydada ala bilərsiniz.</b>"
     await Bot.send_video(id, img, text)
 
-@bot.on_message(filters.command('qurulum') & filters.private)
+@bot.on_message(filters.command('azee') & filters.private)
 async def qurulum(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
@@ -98,7 +98,7 @@ async def husu(bot, msg):
             return
     string = client.session.save()
     await client.send_message("me", "🗽 *Aze UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Aze Userbot qurursunuz. Userbotu qurarkən @KarabakhTeamm qrup və @Azeplugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Aze​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @Thagiyevvvv**")
-    Qrup = await client(CreateChannelRequest(title='🇦🇿Fast Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
+    Qrup = await client(CreateChannelRequest(title='🇦🇿Aze Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
     Qrup = Qrup.chats[0].id
     foto = await client.upload_file(file='FastLog.jpg')
     await client(EditPhotoRequest(channel=Qrup, photo=foto))
@@ -107,7 +107,7 @@ async def husu(bot, msg):
     await client.disconnect()
     await msg.reply("(✓) StringSession alındı!")
 
-    appname = "Azeuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "azeuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         heroku_conn.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
