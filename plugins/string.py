@@ -17,9 +17,9 @@ tracemalloc.start()
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
-    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Qurulum Haqda İzah Üçün /qurulum.yazın.\nℹ️ Heroku Apikey Üçün /apikey yazın.</b>"
+    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən Aze彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /azee yazın.\n🖥️ Qurulum Haqda İzah Üçün /qurulum.yazın.\nℹ️ Heroku Apikey Üçün /apikey yazın.</b>"
     await Bot.send_video(id, video, text)
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/RiyaddBlog")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
 @bot.on_message(filters.command('apikey') & filters.private)
@@ -48,8 +48,8 @@ def rm_r(path):
 async def husu(bot, msg):
     loop = get_event_loop()
     user_id = msg.chat.id
-    aid = 17202681
-    ash = "ef4d6e4de6f924085a01988b1bc751f0"
+    aid = 10849983
+    ash = "494c143f67f74864e23e9b6756de09d6"
     api_msg = await bot.ask(user_id, "(i) **Fast Userbot Qurulumu başlayır**\n\n__(i) Zəhmət olmasa heroku API keyinizi daxil edin__", filters=filters.text)
     api = api_msg.text
     heroku_conn = heroku3.from_key(api)
@@ -63,26 +63,26 @@ async def husu(bot, msg):
     # Telegram Prosesləri #
     phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text) 
     phone_number = phone_number_msg.text
-    client = TelegramClient(StringSession(), 17202681, "ef4d6e4de6f924085a01988b1bc751f0")
+    client = TelegramClient(StringSession(), 10849983, "494c143f67f74864e23e9b6756de09d6")
     await client.connect()
     try:
         code = await client.send_code_request(phone_number)
     except PhoneNumberInvalidError:
-        await msg.reply("❗ **Telefon nömrəsi yanlış!**.\n\n✨ Yenidən başlat /fast")
+        await msg.reply("❗ **Telefon nömrəsi yanlış!**.\n\n✨ Yenidən başlat /azee")
         return
     try:
         phone_code_msg = await bot.ask(user_id, "**📲 Hesaba Kod Göndərildi.\nℹ️ Rəqəmlərin arasına boşluq buraxmaqla yaz.\n📟 Kod belə olur👉** '12345' **siz isə belə göndərin:** `1 2 3 4 5`\n\n✅ [Koda Baxmaq Üçün Daxil Ol](https://t.me/+42777)", filters=filters.text, timeout=600)
     except TimeoutError:
-        await msg.reply("⌛ **Verilən vaxt limi sona çatdı**\n\n❗ Yenidən başlat /fast")
+        await msg.reply("⌛ **Verilən vaxt limi sona çatdı**\n\n❗ Yenidən başlat /azee")
         return
     phone_code = phone_code_msg.text.replace(".", "")
     try:
         await client.sign_in(phone_number, phone_code, password=None)
     except PhoneCodeInvalidError:
-        await msg.reply("❗ **Deyəsən botu başqa biri üçün qurursan.\n\n🪐 Kodu yönləndirməməsini və ss atmasını istəyin.\n\n🔁 Artıq bu kod keçərsiz olduğundan, qurulumu yenidən başladı .** /fast")
+        await msg.reply("❗ **Deyəsən botu başqa biri üçün qurursan.\n\n🪐 Kodu yönləndirməməsini və ss atmasını istəyin.\n\n🔁 Artıq bu kod keçərsiz olduğundan, qurulumu yenidən başladı .** /azee")
         return
     except PhoneCodeExpiredError:
-        await msg.reply("❗ **Doğrulama kodununun müddəti başa çatıb. Qurulumu yenidən başlat.** /fast")
+        await msg.reply("❗ **Doğrulama kodununun müddəti başa çatıb. Qurulumu yenidən başlat.** /azer")
         return
     except SessionPasswordNeededError:
         try:
@@ -97,7 +97,7 @@ async def husu(bot, msg):
             await two_step_msg.reply("🤔 **İki adımlı doğrulamanı.\nℹ️ Yanlış daxil etdin.\n✅ Yenidən başlat** /fast", quote=True)
             return
     string = client.session.save()
-    await client.send_message("me", "🗽 **Fast UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Fast Userbot qurursunuz. Userbotu qurarkən @TheFastSup qrup və @TheFastPlugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Fast​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @FUBOwnerr**")
+    await client.send_message("me", "🗽 *Aze UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Aze Userbot qurursunuz. Userbotu qurarkən @KarabakhTeamm qrup və @Azeplugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Aze​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @Thagiyevvvv**")
     Qrup = await client(CreateChannelRequest(title='🇦🇿Fast Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
     Qrup = Qrup.chats[0].id
     foto = await client.upload_file(file='FastLog.jpg')
@@ -107,19 +107,19 @@ async def husu(bot, msg):
     await client.disconnect()
     await msg.reply("(✓) StringSession alındı!")
 
-    appname = "fastuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "Azeuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         heroku_conn.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
-        await msg.reply("**🤦🏻‍♂️ Herokuda 5 tətbiq aşkar edildi.\nℹ️ tətbiq silməklə bağlı @TheFastSup dan kömək istəyə bilərsiniz.\n✅ Yenidən Quruluma Başla.** /fast")
+        await msg.reply("**🤦🏻‍♂️ Herokuda 5 tətbiq aşkar edildi.\nℹ️ tətbiq silməklə bağlı @karabakhteamm dan kömək istəyə bilərsiniz.\n✅ Yenidən Quruluma Başla.** /azee")
         return
 
     await bot.send_message(-1001718954263, "✅ Mən quruluma Başladım.")
 
-    await msg.reply("(i) 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
-    if os.path.isdir("./fastuserbot/"):
-        rm_r("./fastuserbot/")
-    repo = Repo.clone_from("https://github.com/fastuserbot/fastuserbot", "./fastuserbot/", branch="main")
+    await msg.reply("(i) AzeU彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
+    if os.path.isdir("./azeuserbot/"):
+        rm_r("./azeuserbot/")
+    repo = Repo.clone_from("https://github.com/DCMMusic/quru", "./azeuserbot/", branch="main")
     app = heroku_conn.apps()[appname]
     giturl = app.git_url.replace("https://", "https://api:" + api + "@")
     if "heroku" in repo.remotes:
@@ -135,8 +135,8 @@ async def husu(bot, msg):
     app.install_addon(plan_id_or_name='062a1cc7-f79f-404c-9f91-135f70175577', config={})
     config = app.config()
 
-    config['API_HASH'] = "ef4d6e4de6f924085a01988b1bc751f0"
-    config['API_KEY'] = 17202681
+    config['API_HASH'] = "494c143f67f74864e23e9b6756de09d6"
+    config['API_KEY'] = 10849983
     config['BOTLOG'] = "True"
     config['BOTLOG_CHATID'] = Qrup
     config['COUNTRY'] = "Azerbaijan"
@@ -145,9 +145,9 @@ async def husu(bot, msg):
     config['STRING_SESSION'] = string
     config['TZ'] = "Asia/Baku"
     config['LANGUAGE'] = "AZ"
-    config['UPSTREAM_REPO'] = "https://github.com/fastuserbot/fastuserbot.git"
+    config['UPSTREAM_REPO'] = "https://github.com/DCMMusic/quru.git"
 
-    await msg.reply("**(✓) 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 Akdiv Olunur....**")
+    await msg.reply("**(✓) AzeUs彡𝚛𝙱𝚘𝚝 Akdiv Olunur....**")
     try:
         app.process_formation()["worker"].scale(1)
     except:
@@ -156,4 +156,4 @@ async def husu(bot, msg):
 
     await bot.send_message(-1001718954263, "✅ Qurulum Başata Çatdı.")
 
-    await msg.reply("🎉 **Qurulum uğurla başa çatdı!**\n\n__Bir neçə saniyə sonra hər hansısa Qrupa .alive yazaraq userbotunuzu test edə bilərsiniz\n\nℹ️ FastUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
+    await msg.reply("🎉 **Qurulum uğurla başa çatdı!**\n\n__Bir neçə saniyə sonra hər hansısa Qrupa .alive yazaraq userbotunuzu test edə bilərsiniz\n\nℹ️ AzeUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
