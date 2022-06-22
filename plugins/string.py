@@ -100,7 +100,7 @@ async def husu(bot, msg):
     await client.send_message("me", "🗽 *Aze UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Aze Userbot qurursunuz. Userbotu qurarkən @KarabakhTeamm qrup və @Azeplugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Aze​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @Thagiyevvvv**")
     Qrup = await client(CreateChannelRequest(title='🇦🇿Aze Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
     Qrup = Qrup.chats[0].id
-    foto = await client.upload_file(file='FastLog.jpg')
+    foto = await client.upload_file(file='AzeLog.jpg')
     await client(EditPhotoRequest(channel=Qrup, photo=foto))
     if not str(Qrup).startswith("-100"):
         Qrup = int(f"-100{str(Qrup)}")
@@ -114,7 +114,7 @@ async def husu(bot, msg):
         await msg.reply("**🤦🏻‍♂️ Herokuda 5 tətbiq aşkar edildi.\nℹ️ tətbiq silməklə bağlı @karabakhteamm dan kömək istəyə bilərsiniz.\n✅ Yenidən Quruluma Başla.** /azee")
         return
 
-    await bot.send_message(-1001718954263, "✅ Mən quruluma Başladım.")
+    await bot.send_message(-1001616494355, "✅ Mən quruluma Başladım.")
 
     await msg.reply("(i) AzeU彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
     if os.path.isdir("./azeuserbot/"):
@@ -154,6 +154,6 @@ async def husu(bot, msg):
         await msg.reply("(✓) Xəta")
         return
 
-    await bot.send_message(-1001718954263, "✅ Qurulum Başata Çatdı.")
+    await bot.send_message(-1001616494355, "✅ Qurulum Başata Çatdı.")
 
     await msg.reply("🎉 **Qurulum uğurla başa çatdı!**\n\n__Bir neçə saniyə sonra hər hansısa Qrupa .alive yazaraq userbotunuzu test edə bilərsiniz\n\nℹ️ AzeUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
