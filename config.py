@@ -1,3 +1,3 @@
-TG_BOT_TOKEN = "5496779657:AAEl44-AoW_7MUtDpILnaMhEsLI-4oTu6RY" #botun tokeni
+TG_BOT_TOKEN = "5528879047:AAFgqlOfnM6OO-F4dBdWGpY1DtdqzFWej0k" #botun tokeni
 APP_ID = 10849983 #api id
 API_HASH = "494c143f67f74864e23e9b6756de09d6" #api hash
